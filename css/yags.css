@@ -1,0 +1,264 @@
+/* ------------------------------------------------------------------------- */
+/* About */
+/* ------------------------------------------------------------------------- */
+/* 
+    YAGS v0.6.8
+    Copyright 2019, Michael Miller
+    http://www.yetanothergridsystem.com
+    Free to use under the MIT License.
+    https://opensource.org/licenses/mit-license.php
+*/
+
+/* Contents */
+/* ------------------------------------------------------------------------- */
+/* 
+    Body
+    Buttons
+    Code
+    Input Boxes
+    Grid Layout
+    Flexbox Row
+    Preset Widths
+    Media Information
+*/
+
+
+/* Body */
+/* ------------------------------------------------------------------------- */
+body {
+    background-color: #ffffff;
+    font-family: 'open sans', Helvetica, Arial, sans-serif;
+    margin: 0px;    
+}
+
+
+/* Buttons */
+/* ------------------------------------------------------------------------- */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ffffff;
+    border: .5px solid #5c5c5c;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 11px;
+    height: 30px;
+    line-height: 24px;
+    margin: 5px 0px;
+    padding: 2.5px 10.5px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+    background-color: #000000;
+    border-color: #000000;
+    color: #FFFFFF;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+    border-color: #000000;
+}
+
+
+/* Code */
+/* ------------------------------------------------------------------------- */
+code {
+    background: #dddddd;  
+    border: 1px solid #6e8898;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+pre > code {
+    display: block;
+    margin: 5px;
+    padding: 10px;
+    white-space: pre-wrap;
+}
+
+
+/* Input Boxes */
+/* ------------------------------------------------------------------------- */
+input[type=email],
+input[type=number],
+input[type=password],
+input[type=tel],
+input[type=text],
+input[type=url],
+select,
+textarea {
+    border: 1px solid #5c5c5c;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 12px;
+    height: 30px;
+    margin: 5px 0;
+    padding: 0 5px;
+}
+
+textarea {
+    min-height: 75px;
+    width: 100%;
+    padding: 5px;
+}
+
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=tel]:focus,
+input[type=text]:focus,
+input[type=url]:focus,
+textarea:focus {
+    background-color: #eaf2ef;
+    border: 1px solid #000000;
+}
+
+input[type=email]:hover,
+input[type=number]:hover,
+input[type=password]:hover,
+input[type=tel]:hover,
+input[type=text]:hover,
+input[type=url]:hover,
+select:hover,
+textarea:hover {
+    border: 1px solid #000000;
+}
+
+label {
+    display: block;
+}
+
+
+/* Grid Layout */
+/* ------------------------------------------------------------------------- */
+.root-container {
+    display: grid;
+    grid-template-areas:
+        "navbar"
+        "body-container"
+        "footer";
+}
+
+/* Navbar Row */
+.navbar {
+    background-color: #000000;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    grid-area: navbar;
+    justify-content: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar > a {
+    border-bottom: 3px solid transparent;
+    color: #ffffff;
+    display: block;
+    padding: 10px;
+    text-align: main;
+    text-decoration: none;
+    text-transform: uppercase;   
+}
+
+.navbar > a:hover {
+    background-color: #313131;
+}
+
+.navbar a.active {
+    border-bottom: 3px solid darkgray;
+}
+
+/* Body Row */
+.body-container {
+    display: grid;
+    grid-area: body-container;
+}
+
+/* Footer Row */
+.footer { 
+    grid-area: footer;
+}
+
+
+/* Flexbox Row */
+/* ------------------------------------------------------------------------- */
+/* General purpose flex container. Generally, useful inside a <div> tag
+such as in the "footer" container.
+*/
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+/* Preset Sizes */
+/* ------------------------------------------------------------------------- */
+/* standard 960px space */
+.set-width-480 { width: 480px; } /* one half of a 960px space */
+.set-width-240 { width: 240px; } /* one quarter of a 960px space */
+
+/* full 1080px screen */
+.set-width-540 { width: 540px; } /* one half of a 1080px screen */
+.set-width-270 { width: 270px; } /* One Quarter of a 1080px screen */
+
+/* Maximum width settings */
+.set-max-width-480 { 
+    max-width: 480px;
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+
+/* Media Information */
+/* ------------------------------------------------------------------------- */
+
+@media only screen and (min-width: 600px) {
+    .body-container {
+        display: grid;
+        grid-gap: 2px;
+        margin: 2px;
+    }
+
+    .navbar {
+        justify-content: flex-start;
+    }
+
+    /* Preset widths */
+    .set-width-full { width: 100%; }
+    .set-width-threequarters { width: 75%; }
+    .set-width-half { width: 50%; }
+    .set-width-quarter { width: 25%; }
+
+    /* pixel based settings */
+    .set-width-600 { width: 570px; } /* minimum for the 600px media */
+    .set-width-960 { width: 960px; } /* standard 960px space */
+    .set-width-1080 { width: 1080px; } /* full 1080px screen */
+}
+
+@media only screen and (min-width: 960px) {
+    .body-container {
+        grid-template-columns: 960px;
+        justify-content: center;
+    }
+}

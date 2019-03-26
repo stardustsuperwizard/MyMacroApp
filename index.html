@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Macro Tools - Macro Calculator</title>
+
+    <link rel="stylesheet" href="css/yags.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <div class="root-container">
+        <div class="navbar">
+            <a href="macro-calculator.html" class="active">macros</a>
+        </div>
+        <div class="body-container">
+            <div class="flex-row main">
+                <div class="data-entry">
+                    <h3>Data Entry</h3>
+                    <form action="">
+                        <label for="myBodyWeight">Weight</label>
+                        <input type="number" min="1" step="1" class="set-width-full" id="myBodyWeight">
+                        
+                        <label for="myMeals">Meals</label>
+                        <input type="number" value="4" min="0" class="set-width-full" id="myMeals">
+                        
+                        <label for="mycalories"><input type="radio" name="calculatorType" id="selectTargetCalories">Target Calories</label>
+                        <input type="number" value="0" min="0" class="set-width-full" id="myCalories">
+                        
+                        <label for="selectTotalCalories"><input type="radio" name="calculatorType"  id="selectTotalCalories">Total Calories</label>
+                        <input type="text" class="set-width-full" id="totalCalories">
+                    </form>
+                </div>
+                <div class="protein">
+                    <h3>Protein</h3>
+                    <form action="">
+                        <label for="proteinPerPound">Grams per lb</label>
+                        <input type="number" value="1" min="0.3" max="5.0" step="0.1" class="set-width-full" id="proteinPerPound">
+                        
+                        <label for="proteinTotal">Total (grams)</label>
+                        <input type="text" class="set-width-full" id="proteinTotal">
+
+                        <label for="proteinCalories">Calories Total</label>
+                        <input type="text" class="set-width-full" id="proteinCalories">
+                        
+                        <label for="proteinCaloriesPerMeal">Calories per Meal</label>
+                        <input type="text" class="set-width-full" id="proteinCaloriesPerMeal">
+                        
+                        <label for="proteinGramsPerMeal">Grams per Meal</label>
+                        <input type="text" class="set-width-full" id="proteinGramsPerMeal">                        
+                    </form>
+                </div>
+                <div class="carbs">
+                    <h3>Carbs</h3>
+                    <form action="">
+                        <label for="carbsPerPound">Grams per lb</label>
+                        <input type="number" value="1.5" min="0.3" max="5.0" step="0.1" class="set-width-full" id="carbsPerPound">
+
+                        <label for="carbsTotal">Total (grams)</label>
+                        <input type="text" class="set-width-full" id="carbsTotal">
+                        
+                        <label for="carbsCalories">Calories Total</label>
+                        <input type="text" class="set-width-full" id="carbsCalories">
+
+                        <label for="carbsCaloriesPerMeal">Calories per Meal</label>
+                        <input type="text" class="set-width-full" id="carbsCaloriesPerMeal">
+                        
+                        <label for="carbsGramsPerMeal">Grams per Meal</label>
+                        <input type="text" class="set-width-full" id="carbsGramsPerMeal">
+
+                    </form>
+                </div>
+                <div class="fats">
+                    <h3>Fats</h3>
+                    <form action="">
+                        <label for="fatPerPound">Grams per lb</label>
+                        <input type="number" value="0.3" min="0.3" max="5.0" step="0.1" class="set-width-full" id="fatPerPound">
+                        
+                        <label for="fatTotal">Total (grams)</label>
+                        <input type="text" class="set-width-full" id="fatTotal">
+                        
+                        <label for="fatCalories">Calories Total</label>
+                        <input type="text" class="set-width-full" id="fatCalories">
+
+                        <label for="fatCaloriesPerMeal">Calories per Meal</label>
+                        <input type="text" class="set-width-full" id="fatCaloriesPerMeal"></td>
+
+                        <label for="fatGramsPerMeal">Grams per Meal</label>
+                        <input type="text" class="set-width-full" id="fatGramsPerMeal">
+                    </form>
+                </div>
+            </div>
+            <!-- <div class="footer">
+                <div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <script src="js/macro-calculator.js"></script>
+</body>
+</html>
