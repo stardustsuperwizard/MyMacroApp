@@ -1,102 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Macro Tools - Macro Calculator</title>
+  <head>
+    <!-- Meta tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="viewport" content="width=device-width" />
 
-    <link rel="stylesheet" href="css/yags.css">
-    <link rel="stylesheet" href="css/custom.css">
-</head>
-<body>
-    <div class="root-container">
-        <div class="navbar">
-            <a href="index.html" class="active">macros</a>
-        </div>
-        <div class="body-container">
-            <div class="flex-row main">
-                <div class="data-entry">
-                    <h3>Data Entry</h3>
-                    <form action="">
-                        <label for="myBodyWeight">Weight</label>
-                        <input type="number" min="1" step="1" class="set-width-full" id="myBodyWeight">
-                        
-                        <label for="myMeals">Meals</label>
-                        <input type="number" value="4" min="0" class="set-width-full" id="myMeals">
-                        
-                        <label for="mycalories"><input type="radio" name="calculatorType" id="selectTargetCalories">Target Calories</label>
-                        <input type="number" value="0" min="0" class="set-width-full" id="myCalories">
-                        
-                        <label for="selectTotalCalories"><input type="radio" name="calculatorType"  id="selectTotalCalories">Total Calories</label>
-                        <input type="text" class="set-width-full" id="totalCalories">
-                    </form>
-                </div>
-                <div class="protein">
-                    <h3>Protein</h3>
-                    <form action="">
-                        <label for="proteinPerPound">Grams per lb</label>
-                        <input type="number" value="1" min="0.3" max="5.0" step="0.1" class="set-width-full" id="proteinPerPound">
-                        
-                        <label for="proteinTotal">Total (grams)</label>
-                        <input type="text" class="set-width-full" id="proteinTotal">
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-title" content="My Macro App">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-                        <label for="proteinCalories">Calories Total</label>
-                        <input type="text" class="set-width-full" id="proteinCalories">
-                        
-                        <label for="proteinCaloriesPerMeal">Calories per Meal</label>
-                        <input type="text" class="set-width-full" id="proteinCaloriesPerMeal">
-                        
-                        <label for="proteinGramsPerMeal">Grams per Meal</label>
-                        <input type="text" class="set-width-full" id="proteinGramsPerMeal">                        
-                    </form>
-                </div>
-                <div class="carbs">
-                    <h3>Carbs</h3>
-                    <form action="">
-                        <label for="carbsPerPound">Grams per lb</label>
-                        <input type="number" value="1.5" min="0.3" max="5.0" step="0.1" class="set-width-full" id="carbsPerPound">
+    <!-- Favicon and title -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <title>My Macro App</title>
 
-                        <label for="carbsTotal">Total (grams)</label>
-                        <input type="text" class="set-width-full" id="carbsTotal">
-                        
-                        <label for="carbsCalories">Calories Total</label>
-                        <input type="text" class="set-width-full" id="carbsCalories">
+    <!-- Halfmoon CSS -->
+    <link href="css/halfmoon-variables.min.css" rel="stylesheet" />
+    <!--
+      Or,
+      Use the following (no variables, supports IE11):
+      <link href="css/halfmoon.min.css" rel="stylesheet" />
+    -->
+  </head>
+  <body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true" data-set-preferred-theme-onload="true">
+    <!-- Modals go here -->
+    <!-- Reference: https://www.gethalfmoon.com/docs/modal -->
 
-                        <label for="carbsCaloriesPerMeal">Calories per Meal</label>
-                        <input type="text" class="set-width-full" id="carbsCaloriesPerMeal">
-                        
-                        <label for="carbsGramsPerMeal">Grams per Meal</label>
-                        <input type="text" class="set-width-full" id="carbsGramsPerMeal">
+    <!-- Page wrapper start -->
+    <div class="page-wrapper with-navbar with-sidebar with-navbar-fixed-bottom" data-sidebar-type="overlayed-sm-and-down">
+      
+      <!-- Sticky alerts (toasts), empty container -->
+      <!-- Reference: https://www.gethalfmoon.com/docs/sticky-alerts-toasts -->
+      <div class="sticky-alerts"></div>
 
-                    </form>
-                </div>
-                <div class="fats">
-                    <h3>Fats</h3>
-                    <form action="">
-                        <label for="fatPerPound">Grams per lb</label>
-                        <input type="number" value="0.3" min="0.3" max="5.0" step="0.1" class="set-width-full" id="fatPerPound">
-                        
-                        <label for="fatTotal">Total (grams)</label>
-                        <input type="text" class="set-width-full" id="fatTotal">
-                        
-                        <label for="fatCalories">Calories Total</label>
-                        <input type="text" class="set-width-full" id="fatCalories">
+      <!-- Navbar start -->
+      <nav class="navbar">
+        <!-- Reference: https://www.gethalfmoon.com/docs/navbar -->
+      </nav>
+      <!-- Navbar end -->
 
-                        <label for="fatCaloriesPerMeal">Calories per Meal</label>
-                        <input type="text" class="set-width-full" id="fatCaloriesPerMeal"></td>
+      <!-- Sidebar overlay -->
+      <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
 
-                        <label for="fatGramsPerMeal">Grams per Meal</label>
-                        <input type="text" class="set-width-full" id="fatGramsPerMeal">
-                    </form>
-                </div>
+      <!-- Sidebar start -->
+      <div class="sidebar">
+        <!-- Reference: https://www.gethalfmoon.com/docs/sidebar -->
+      </div>
+      <!-- Sidebar end -->
+
+      <!-- Content wrapper start -->
+      <div class="content-wrapper">
+        <!--
+          Add your page's main content here
+          Examples:
+          1. https://www.gethalfmoon.com/docs/content-and-cards/#building-a-page
+          2. https://www.gethalfmoon.com/docs/grid-system/#building-a-dashboard
+        -->
+        <div class="w-full h-full d-flex align-items-center justify-content-center">
+          <div class="content">
+            <h1 class="content-title">Halfmoon starter template</h1>
+            <div>
+              <a href="https://www.gethalfmoon.com" class="btn btn-link px-0">Halfmoon website</a>
             </div>
-            <!-- <div class="footer">
-                <div>
-                </div>
-            </div> -->
+            <div>
+              <a href="https://www.gethalfmoon.com/docs" class="btn btn-link px-0">Halfmoon docs</a>
+            </div>
+            <div>  
+              <a href="https://www.gethalfmoon.com/docs/page-building/#starter-template-generator" class="btn btn-link px-0">Starter template generator</a>
+            </div>
+            <div>  
+              <a href="https://www.twitter.com/halfmoonui" class="btn btn-link px-0">Follow on Twitter for updates</a>
+            </div>
+            <div class="mt-20">
+              Toggles:
+              <button class="btn btn-sm" type="button" onclick="halfmoon.toggleDarkMode()">Dark mode</button>
+              <button class="btn btn-sm" type="button" onclick="halfmoon.toggleSidebar()">Sidebar</button>
+            </div>
+          </div>
         </div>
+      </div>
+      <!-- Content wrapper end -->
+
+      <!-- Navbar fixed bottom start -->
+      <nav class="navbar navbar-fixed-bottom">
+        <!-- Reference: https://www.gethalfmoon.com/docs/navbar#navbar-fixed-bottom -->
+      </nav>
+      <!-- Navbar fixed bottom end -->
     </div>
-    <script src="js/macro-calculator.js"></script>
-</body>
+    <!-- Page wrapper end -->
+
+    <!-- Halfmoon JS -->
+    <script src="js/halfmoon.min.js"></script>
+    <script>
+      if('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/serviceworker.js')
+              .then(function() {
+                  console.log('Service Worker Registered');
+              });
+      }
+    </script>
+  </body>
 </html>
