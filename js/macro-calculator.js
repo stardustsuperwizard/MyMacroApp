@@ -56,6 +56,7 @@ function displayResults (event) {
         proteinPerPound = document.getElementById('proteinPerPound').value;
         carbsPerPound = document.getElementById('carbsPerPound').value;
         fatPerPound = document.getElementById('fatPerPound').value;
+        console.log(proteinPerPound);
     } else if (event.target.id === 'myMeals') {
         myBodyWeight = document.getElementById('myBodyWeight').value;
         myMeals = event.target.value;

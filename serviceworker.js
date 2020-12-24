@@ -1,19 +1,20 @@
 // https://medium.com/dev-channel/learn-how-to-build-a-pwa-in-under-5-minutes-c860ad406ed
 
 
-let cacheName = 'hello-world-page';
+// prod key: 9cd0567f-0242-405b-8ebc-e7c7dbc33763
+
+let cacheName = 'mymacroapp';
 let filesToCache = [
     '/',
     '/css/halfmoon-variables.min.css',
     '/favicon.ico',
     '/index.html',
-    '/js/halfmoon.min.js',
-    '/page2.html'
+    '/js/halfmoon.min.js'
 ];
-
+let cacheIDs = [ cacheName ];
 
 self.addEventListener('install', function(event) {
-    console.log('[ServiceWorkder] Install');
+    console.log('[ServiceWorker] Install');
     event.waitUntil(
         caches.open(cacheName).then(function(cache) {
             console.log('[ServiceWorker] Caching app shell');
@@ -23,8 +24,17 @@ self.addEventListener('install', function(event) {
 });
 
 
-self.addEventListener('active', event => {
-    event.waitUntil(self.clients.claim());
+// https://gomakethings.com/how-to-update-a-service-worker/
+self.addEventListener('activate', function(event) {
+    event.waitUntil(caches.keys().then(function (keys) {
+        return Promise.all(keys.filter(function(key) {
+            return !cacheIDs.includes(key);
+        }).map(function(key) {
+            return caches.delete(key);
+        }));
+    }).then(function () {
+        return self.clients.claim();
+    }));
 });
 
 

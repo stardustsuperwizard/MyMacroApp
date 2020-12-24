@@ -16,32 +16,37 @@
     <!-- Halfmoon CSS -->
     <link href="css/halfmoon-variables.min.css" rel="stylesheet" />
 </head>
-<body class="with-custom-webkit-scrollbars with-custom-css-scrollbars">
+<body class="with-custom-webkit-scrollbars with-custom-css-scrollbars bg-light">
     <!-- Modals -->
 
     <!-- Content -->
     <div class="page-wrapper">
         <div class="content-wrapper">
-            <div class="container-fluid">
-
+            <div class="container-md bg-white">
                 <div class="row">
-                    <div class="col-md-6 col-lg-4 col-xl-2 mw-full">
+                    <div class="col-sm-6">
                         <div class="card">
                             <div class="card-title">
                                 User Input
                             </div>
                             <form>
                                 <div class="form-row">
-                                    <input type="text" class="form-control">
+                                    <label for="myBodyWeight">Weight</label>
+                                    <input type="number" min="1" step="1" class="form-control" id="myBodyWeight">
                                 </div>
                                 <div class="form-row">
-                                    <input type="text" class="form-control">
+                                    <label for="myMeals">Meals</label>
+                                    <input type="number" value="4" min="0" class="form-control" id="myMeals">
                                 </div>
                                 <div class="form-row">
-                                    <input type="text" class="form-control">
+                                    <label for="mycalories">
+                                    <input type="radio" name="calculatorType" id="selectTargetCalories">Target Calories</label>
+                                    <input type="number" value="2000" min="0" value="0" min="0" class="form-control" id="myCalories">
                                 </div>
                                 <div class="form-row">
-                                    <input type="text" class="form-control">
+                                    <label for="selectTotalCalories">
+                                    <input type="radio" checked="checked" name="calculatorType" id="selectTotalCalories">Total Calories</label>
+                                    <input type="text" class="form-control" id="totalCalories">
                                 </div>
                             </form>
                         </div>
@@ -49,89 +54,91 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6 col-lg-4 col-xl-2 mw-full">
+                    <div class="col-sm-6 col-md-4">
                         <div class="card">
                             <div class="card-title">
                                 Protein
                             </div>
                             <form>
                                 <div class="form-row">
-                                    <input type="text" class="form-control">
+                                    <label for="proteinPerPound">Grams per lb</label>
+                                    <input type="number" value="1" min="0.3" max="5.0" step="0.1" class="form-control" id="proteinPerPound">
                                 </div>
                                 <div class="form-row">
-                                    <input type="text" class="form-control">
+                                    <label for="proteinTotal">Total (grams)</label>
+                                    <input type="text" class="form-control" id="proteinTotal">
                                 </div>
                                 <div class="form-row">
-                                    <input type="text" class="form-control">
+                                    <label for="proteinCalories">Calories Total</label>
+                                    <input type="text" class="form-control" id="proteinCalories">
                                 </div>
                                 <div class="form-row">
-                                    <input type="text" class="form-control">
+                                    <label for="proteinCaloriesPerMeal">Calories per Meal</label>
+                                    <input type="text" class="form-control" id="proteinCaloriesPerMeal">
+                                </div>
+                                <div class="form-row">
+                                    <label for="proteinGramsPerMeal">Grams per Meal</label>
+                                    <input type="text" class="form-control" id="proteinGramsPerMeal">
                                 </div>
                             </form>
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-4 col-xl-2 mw-full">
+                    <div class="col-sm-6 col-md-4">
                         <div class="card">
                             <div class="card-title">
                                 Carbs
                             </div>
                             <form>
                                 <div class="form-row">
-                                    <input type="text" class="form-control">
+                                    <label for="carbsPerPound">Grams per lb</label>
+                                    <input type="number" value="1.5" min="0.3" max="5.0" step="0.1" class="form-control" id="carbsPerPound">
                                 </div>
                                 <div class="form-row">
-                                    <input type="text" class="form-control">
+                                    <label for="carbsTotal">Total (grams)</label>
+                                    <input type="text" class="form-control" id="carbsTotal">
                                 </div>
                                 <div class="form-row">
-                                    <input type="text" class="form-control">
+                                    <label for="carbsCalories">Calories Total</label>
+                                    <input type="text" class="form-control" id="carbsCalories">
                                 </div>
                                 <div class="form-row">
-                                    <input type="text" class="form-control">
+                                    <label for="carbsCaloriesPerMeal">Calories per Meal</label>
+                                    <input type="text" class="form-control" id="carbsCaloriesPerMeal">
+                                </div>
+                                <div class="form-row">
+                                    <label for="carbsGramsPerMeal">Grams per Meal</label>
+                                    <input type="text" class="form-control" id="carbsGramsPerMeal">
                                 </div>
                             </form>
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-4 col-xl-2 mw-full">
+                    <div class="col-sm-6 col-md-4">
                         <div class="card">
                             <div class="card-title">
                                 Fat
                             </div>
                             <form>
                                 <div class="form-row">
-                                    <input type="text" class="form-control">
+                                    <label for="fatPerPound">Grams per lb</label>
+                                    <input type="number" value="0.3" max="5.0" step="0.1" class="form-control" id="fatPerPound">
                                 </div>
                                 <div class="form-row">
-                                    <input type="text" class="form-control">
+                                    <label for="fatTotal">Total (grams)</label>
+                                    <input type="text" class="form-control" id="fatTotal">
                                 </div>
                                 <div class="form-row">
-                                    <input type="text" class="form-control">
+                                    <label for="fatCalories">Calories Total</label>
+                                    <input type="text" class="form-control" id="fatCalories">
                                 </div>
                                 <div class="form-row">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 col-xl-2 mw-full">
-                        <div class="card">
-                            <div class="card-title">
-                                Calories
-                            </div>
-                            <form>
-                                <div class="form-row">
-                                    <input type="text" class="form-control">
+                                    <label for="fatCaloriesPerMeal">Calories per Meal</label>
+                                    <input type="text" class="form-control" id="fatCaloriesPerMeal">
                                 </div>
                                 <div class="form-row">
-                                    <input type="text" class="form-control">
-                                </div>
-                                <div class="form-row">
-                                    <input type="text" class="form-control">
-                                </div>
-                                <div class="form-row">
-                                    <input type="text" class="form-control">
+                                    <label for="fatGramsPerMeal">Grams per Meal</label>
+                                    <input type="text" class="form-control" id="fatGramsPerMeal">
                                 </div>
                             </form>
                         </div>
@@ -142,16 +149,20 @@
         </div>
     </div>
 
+    <!-- Macro Calculator -->
+    <script src="js/macro-calculator.js"></script>
+
     <!-- Halfmoon JS -->
     <script src="js/halfmoon.min.js"></script>
 
     <!-- Service Worker -->
     <script>
         if('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/serviceworker.js')
-                .then(function() {
-                    console.log('Service Worker Registered');
-                });
+            navigator.serviceWorker.register('/serviceworker.js').then(function(registration) {
+                console.log('Service Worker: Registration Success');
+            }).catch(function(error) {
+                console.log('Service Worker: Registration Failure - ' + error);
+            });
         }
     </script>
 
