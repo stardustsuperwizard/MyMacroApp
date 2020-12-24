@@ -1,7 +1,7 @@
 // https://medium.com/dev-channel/learn-how-to-build-a-pwa-in-under-5-minutes-c860ad406ed
 
 
-// prod key: 9cd0567f-0242-405b-8ebc-e7c7dbc33763
+// prod key: c8ef5177-993c-401f-bab6-8733afedf104
 
 let cacheName = 'mymacroapp';
 let filesToCache = [
