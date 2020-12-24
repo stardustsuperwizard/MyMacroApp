@@ -3,100 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Macro Tools - Macro Calculator</title>
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-title" content="My Macro App">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-    <link rel="stylesheet" href="css/yags.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon and title -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <title>My Macro App</title>
+
+    <!-- Halfmoon CSS -->
+    <link href="css/halfmoon-variables.min.css" rel="stylesheet" />
 </head>
-<body>
-    <div class="root-container">
-        <div class="navbar">
-            <a href="index.html" class="active">macros</a>
-        </div>
-        <div class="body-container">
-            <div class="flex-row main">
-                <div class="data-entry">
-                    <h3>Data Entry</h3>
-                    <form action="">
-                        <label for="myBodyWeight">Weight</label>
-                        <input type="number" min="1" step="1" class="set-width-full" id="myBodyWeight">
-                        
-                        <label for="myMeals">Meals</label>
-                        <input type="number" value="4" min="0" class="set-width-full" id="myMeals">
-                        
-                        <label for="mycalories"><input type="radio" name="calculatorType" id="selectTargetCalories">Target Calories</label>
-                        <input type="number" value="0" min="0" class="set-width-full" id="myCalories">
-                        
-                        <label for="selectTotalCalories"><input type="radio" name="calculatorType"  id="selectTotalCalories">Total Calories</label>
-                        <input type="text" class="set-width-full" id="totalCalories">
-                    </form>
+<body class="with-custom-webkit-scrollbars with-custom-css-scrollbars bg-light">
+    <!-- Modals -->
+
+    <!-- Content -->
+    <div class="page-wrapper">
+        <div class="content-wrapper">
+            <div class="container-md bg-white">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-title">
+                                User Input
+                            </div>
+                            <form>
+                                <div class="form-row">
+                                    <label for="myBodyWeight">Weight</label>
+                                    <input type="number" min="1" step="1" class="form-control" id="myBodyWeight">
+                                </div>
+                                <div class="form-row">
+                                    <label for="myMeals">Meals</label>
+                                    <input type="number" value="4" min="0" class="form-control" id="myMeals">
+                                </div>
+                                <div class="form-row">
+                                    <label for="mycalories">
+                                    <input type="radio" name="calculatorType" id="selectTargetCalories">Target Calories</label>
+                                    <input type="number" value="2000" min="0" value="0" min="0" class="form-control" id="myCalories">
+                                </div>
+                                <div class="form-row">
+                                    <label for="selectTotalCalories">
+                                    <input type="radio" checked="checked" name="calculatorType" id="selectTotalCalories">Total Calories</label>
+                                    <input type="text" class="form-control" id="totalCalories">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="protein">
-                    <h3>Protein</h3>
-                    <form action="">
-                        <label for="proteinPerPound">Grams per lb</label>
-                        <input type="number" value="1" min="0.3" max="5.0" step="0.1" class="set-width-full" id="proteinPerPound">
-                        
-                        <label for="proteinTotal">Total (grams)</label>
-                        <input type="text" class="set-width-full" id="proteinTotal">
 
-                        <label for="proteinCalories">Calories Total</label>
-                        <input type="text" class="set-width-full" id="proteinCalories">
-                        
-                        <label for="proteinCaloriesPerMeal">Calories per Meal</label>
-                        <input type="text" class="set-width-full" id="proteinCaloriesPerMeal">
-                        
-                        <label for="proteinGramsPerMeal">Grams per Meal</label>
-                        <input type="text" class="set-width-full" id="proteinGramsPerMeal">                        
-                    </form>
-                </div>
-                <div class="carbs">
-                    <h3>Carbs</h3>
-                    <form action="">
-                        <label for="carbsPerPound">Grams per lb</label>
-                        <input type="number" value="1.5" min="0.3" max="5.0" step="0.1" class="set-width-full" id="carbsPerPound">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="card">
+                            <div class="card-title">
+                                Protein
+                            </div>
+                            <form>
+                                <div class="form-row">
+                                    <label for="proteinPerPound">Grams per lb</label>
+                                    <input type="number" value="1" min="0.3" max="5.0" step="0.1" class="form-control" id="proteinPerPound">
+                                </div>
+                                <div class="form-row">
+                                    <label for="proteinTotal">Total (grams)</label>
+                                    <input type="text" class="form-control" id="proteinTotal">
+                                </div>
+                                <div class="form-row">
+                                    <label for="proteinCalories">Calories Total</label>
+                                    <input type="text" class="form-control" id="proteinCalories">
+                                </div>
+                                <div class="form-row">
+                                    <label for="proteinCaloriesPerMeal">Calories per Meal</label>
+                                    <input type="text" class="form-control" id="proteinCaloriesPerMeal">
+                                </div>
+                                <div class="form-row">
+                                    <label for="proteinGramsPerMeal">Grams per Meal</label>
+                                    <input type="text" class="form-control" id="proteinGramsPerMeal">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
 
-                        <label for="carbsTotal">Total (grams)</label>
-                        <input type="text" class="set-width-full" id="carbsTotal">
-                        
-                        <label for="carbsCalories">Calories Total</label>
-                        <input type="text" class="set-width-full" id="carbsCalories">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="card">
+                            <div class="card-title">
+                                Carbs
+                            </div>
+                            <form>
+                                <div class="form-row">
+                                    <label for="carbsPerPound">Grams per lb</label>
+                                    <input type="number" value="1.5" min="0.3" max="5.0" step="0.1" class="form-control" id="carbsPerPound">
+                                </div>
+                                <div class="form-row">
+                                    <label for="carbsTotal">Total (grams)</label>
+                                    <input type="text" class="form-control" id="carbsTotal">
+                                </div>
+                                <div class="form-row">
+                                    <label for="carbsCalories">Calories Total</label>
+                                    <input type="text" class="form-control" id="carbsCalories">
+                                </div>
+                                <div class="form-row">
+                                    <label for="carbsCaloriesPerMeal">Calories per Meal</label>
+                                    <input type="text" class="form-control" id="carbsCaloriesPerMeal">
+                                </div>
+                                <div class="form-row">
+                                    <label for="carbsGramsPerMeal">Grams per Meal</label>
+                                    <input type="text" class="form-control" id="carbsGramsPerMeal">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
 
-                        <label for="carbsCaloriesPerMeal">Calories per Meal</label>
-                        <input type="text" class="set-width-full" id="carbsCaloriesPerMeal">
-                        
-                        <label for="carbsGramsPerMeal">Grams per Meal</label>
-                        <input type="text" class="set-width-full" id="carbsGramsPerMeal">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="card">
+                            <div class="card-title">
+                                Fat
+                            </div>
+                            <form>
+                                <div class="form-row">
+                                    <label for="fatPerPound">Grams per lb</label>
+                                    <input type="number" value="0.3" max="5.0" step="0.1" class="form-control" id="fatPerPound">
+                                </div>
+                                <div class="form-row">
+                                    <label for="fatTotal">Total (grams)</label>
+                                    <input type="text" class="form-control" id="fatTotal">
+                                </div>
+                                <div class="form-row">
+                                    <label for="fatCalories">Calories Total</label>
+                                    <input type="text" class="form-control" id="fatCalories">
+                                </div>
+                                <div class="form-row">
+                                    <label for="fatCaloriesPerMeal">Calories per Meal</label>
+                                    <input type="text" class="form-control" id="fatCaloriesPerMeal">
+                                </div>
+                                <div class="form-row">
+                                    <label for="fatGramsPerMeal">Grams per Meal</label>
+                                    <input type="text" class="form-control" id="fatGramsPerMeal">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
 
-                    </form>
-                </div>
-                <div class="fats">
-                    <h3>Fats</h3>
-                    <form action="">
-                        <label for="fatPerPound">Grams per lb</label>
-                        <input type="number" value="0.3" min="0.3" max="5.0" step="0.1" class="set-width-full" id="fatPerPound">
-                        
-                        <label for="fatTotal">Total (grams)</label>
-                        <input type="text" class="set-width-full" id="fatTotal">
-                        
-                        <label for="fatCalories">Calories Total</label>
-                        <input type="text" class="set-width-full" id="fatCalories">
-
-                        <label for="fatCaloriesPerMeal">Calories per Meal</label>
-                        <input type="text" class="set-width-full" id="fatCaloriesPerMeal"></td>
-
-                        <label for="fatGramsPerMeal">Grams per Meal</label>
-                        <input type="text" class="set-width-full" id="fatGramsPerMeal">
-                    </form>
                 </div>
             </div>
-            <!-- <div class="footer">
-                <div>
-                </div>
-            </div> -->
         </div>
     </div>
+
+    <!-- Macro Calculator -->
     <script src="js/macro-calculator.js"></script>
+
+    <!-- Halfmoon JS -->
+    <script src="js/halfmoon.min.js"></script>
+
+    <!-- Service Worker -->
+    <script>
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/serviceworker.js').then(function(registration) {
+                console.log('Service Worker: Registration Success');
+            }).catch(function(error) {
+                console.log('Service Worker: Registration Failure - ' + error);
+            });
+        }
+    </script>
+
+    <!-- Vue JS -->
+    <script></script>
 </body>
 </html>
